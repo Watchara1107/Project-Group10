@@ -58,24 +58,28 @@
 
 
             <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
-                
-              <div class="col-lg-6 menu-item filter-starters">
-                <img src="{{asset('assets/img/menu/b.jpg')}}" class="menu-img" alt="">
-                <div class="menu-content">
-                  <a href="#">รอบเช้า</a><span>6.am-12.am</span>
+                @foreach ($services as $service)
+                <div class="col-lg-6 menu-item filter-starters">
+                  <img class="menu-img" src="{{asset('backend/images/'.$service->image)}}" width="150px" alt="">
+                  <div class="menu-content">
+                    <a>{{ $service->name }}</a>
+                    <span>{{ $service->price }}</span>
+                    
+                  </div>
+                  <div class="menu-ingredients">
+                    <a>  {{ $service->detail }}</a>
+                  </div>
+                  
                 </div>
+                @endforeach
+                
               </div>
-
-             
-
-
-
-
+              <div class="mt-4">
+                {{ $services->links() }}
               </div>
             </div>
-
           </div>
-
+          
       </div>
     </section><!-- End Menu Section -->
 
