@@ -1,10 +1,7 @@
-
-    @include('layouts.head')
-
+@include('layouts.head')
 
 <body>
-
-    @include('layouts.header')
+  @include('layouts.header')
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -13,11 +10,6 @@
         <div class="col-lg-8">
           <h1>Welcome to <span>Thai Massage Shop</span></h1>
           <h2>ยินดีต้อนรับเข้าสู่เว็บไซต์ร้านนวดเเผนไทย</h2>
-
-          <div class="btns">
-            <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
-
-          </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
 
@@ -42,7 +34,7 @@
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
             <h3>นวดแผนไทย </h3>
             <p>
-            นวดแผนไทย คือ การนวดชนิดหนึ่ง ซึ่งเป็นศาสตร์บำบัดและรักษาโรคแขนงหนึ่งของการแพทย์แผนไทย โดยจะเน้นในลักษณะการกด การคลึง การบีบ การดัด การดึง การอบ และประคบ ซึ่งรู้จักกันโดยทั่วไปในชื่อ “นวดแผนโบราณ” ซึ่งไม่ใช่เพื่อรักษาความเจ็บปวดเท่านั้น แต่ยังดีต่อสุขภาพ และสามารถรักษาโรค เพราะการนวดจะส่งผลโดยตรงต่อร่างกายและจิตใจ โดยอาศัยการสัมผัสอย่างมีศิลปะ 
+              นวดแผนไทย คือ การนวดชนิดหนึ่ง ซึ่งเป็นศาสตร์บำบัดและรักษาโรคแขนงหนึ่งของการแพทย์แผนไทย โดยจะเน้นในลักษณะการกด การคลึง การบีบ การดัด การดึง การอบ และประคบ ซึ่งรู้จักกันโดยทั่วไปในชื่อ “นวดแผนโบราณ” ซึ่งไม่ใช่เพื่อรักษาความเจ็บปวดเท่านั้น แต่ยังดีต่อสุขภาพ และสามารถรักษาโรค เพราะการนวดจะส่งผลโดยตรงต่อร่างกายและจิตใจ โดยอาศัยการสัมผัสอย่างมีศิลปะ 
             </p>
           </div>
         </div>
@@ -55,39 +47,39 @@
       <div class="container" data-aos="fade-up">
 
 
-    <!-- ======= Menu Section ======= -->
-    <section id="menu" class="menu section-bg">
-      <div class="container" data-aos="fade-up">
+        <!-- ======= Menu Section ======= -->
+        <section id="menu" class="menu section-bg">
+          <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>menu</h2>
-          <p>รอบเวลาในการนวด</p>
-        </div>
+            <div class="section-title">
+              <h2>menu</h2>
+              <p>รอบเวลาในการนวด</p>
+            </div>
 
 
-        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
 
-          <div class="col-lg-6 menu-item filter-starters">
-            <img src="{{asset('assets/img/menu/b.jpg')}}" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">รอบเช้า</a><span>6.am-12.am</span>
+              <div class="col-lg-6 menu-item filter-starters">
+                <img src="{{asset('assets/img/menu/b.jpg')}}" class="menu-img" alt="">
+                <div class="menu-content">
+                  <a href="#">รอบเช้า</a><span>6.am-12.am</span>
+                </div>
+
+              </div>
+
+              <div class="col-lg-6 menu-item filter-specialty">
+                <img src="{{asset('assets/img/menu/c.jpg')}}" class="menu-img" alt="">
+                <div class="menu-content">
+                  <a href="#">รอบบ่าย</a><span>$13.pm-22.pm</span>
+                </div>
+
+
+
+
+              </div>
             </div>
 
           </div>
-
-          <div class="col-lg-6 menu-item filter-specialty">
-            <img src="{{asset('assets/img/menu/c.jpg')}}" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">รอบบ่าย</a><span>$13.pm-22.pm</span>
-            </div>
-
-
-
-
-            </div>
-          </div>
-
-        </div>
 
       </div>
     </section><!-- End Menu Section -->
@@ -112,7 +104,7 @@
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>การนวด</h3>
                   <p>
-                  การนวดคือ การบำบัดและทำให้ร่างกายผ่อนคลาย โดยใช้ทักษะทางร่างกายและอุปกรณ์เสริมด้วยการ บีบ จับ คลึง รีดเส้น เหยียบ ยัน กดจุด ดัด หรือกระตุ้นด้วยการสั่น เพื่อกระตุ้นให้การทำงานของกล้ามเนื้อและระบบต่างของร่างกายทำงานได้ดีขึ้น ถือเป็นประเภทหนึ่งของการรักษาที่มีมายาวนาน ทั้งนี้หากคุณสงสัยว่า เมื่อใดกันนะที่ร่างกายต้องการการนวด ลองสังเกตดูนะคะ เมื่อใดก็ตามที่รู้สึกว่าร่างกายทำงานได้ไม่ดีเหมือนเก่า เช่น รู้สึกตัวหนัก กล้ามเนื้อส่วนใดส่วนหนึ่งมีอาการเกร็งตึง เคลื่อนไหวได้ไม่คล่องแคล่วเหมือนแต่ก่อน เมื่อนั้นแสดงว่าร่างกายคุณต้องการการนวดแล้วล่ะ
+                    การนวดคือ การบำบัดและทำให้ร่างกายผ่อนคลาย โดยใช้ทักษะทางร่างกายและอุปกรณ์เสริมด้วยการ บีบ จับ คลึง รีดเส้น เหยียบ ยัน กดจุด ดัด หรือกระตุ้นด้วยการสั่น เพื่อกระตุ้นให้การทำงานของกล้ามเนื้อและระบบต่างของร่างกายทำงานได้ดีขึ้น ถือเป็นประเภทหนึ่งของการรักษาที่มีมายาวนาน ทั้งนี้หากคุณสงสัยว่า เมื่อใดกันนะที่ร่างกายต้องการการนวด ลองสังเกตดูนะคะ เมื่อใดก็ตามที่รู้สึกว่าร่างกายทำงานได้ไม่ดีเหมือนเก่า เช่น รู้สึกตัวหนัก กล้ามเนื้อส่วนใดส่วนหนึ่งมีอาการเกร็งตึง เคลื่อนไหวได้ไม่คล่องแคล่วเหมือนแต่ก่อน เมื่อนั้นแสดงว่าร่างกายคุณต้องการการนวดแล้วล่ะ
 
                   </p>
                 </div>
@@ -128,9 +120,9 @@
                   <h3>ข้อควรรู้ก่อนจะไปนวดแผนไทย หรือ นวดแผนโบราณ </h3>
 
                   <p>
-                  ทุกวันนี้เวลาเดินไปไหนมาไหนในกรุงเทพฯ สถานที่ที่เราพบเจอกันบ่อยพอ ๆ กับ 7-11 ก็เห็นจะเป็นร้านนวดแผนไทยนี่แหละค่ะ นั่นก็เพราะว่าการนวดไทยนั้นกำลังเป็นที่ฮอตฮิตในทั้งหมู่คนไทยและชาวต่างประเทศสุด ๆ ไปเลยค่ะ
+                    ทุกวันนี้เวลาเดินไปไหนมาไหนในกรุงเทพฯ สถานที่ที่เราพบเจอกันบ่อยพอ ๆ กับ 7-11 ก็เห็นจะเป็นร้านนวดแผนไทยนี่แหละค่ะ นั่นก็เพราะว่าการนวดไทยนั้นกำลังเป็นที่ฮอตฮิตในทั้งหมู่คนไทยและชาวต่างประเทศสุด ๆ ไปเลยค่ะ
 
-แม้ว่าการนวดไทยนั้นทำให้เราสบายตัว คลายความเมื่อยล้า เลยทำให้เป็นที่นิยมสุด ๆ ผู้คนมากมายแห่เดินเข้าร้านนวดกันว่าเล่น แต่จริง ๆ แล้วรู้กันไหมคะการนวดนั้นใช่ว่าจะมีแต่ข้อดีเสมอไป จริงอยู่ว่าการนวดไทย หรือ การนวดแผนโบราณ นั้นมีข้อดีอยู่มาก แต่ก็ใช่ว่าจะไม่มีข้อเสียเลยค่ะ ดังนั้นก่อนเข้ารับการนวด ผู้นวดจึงควรจะต้องศึกษาข้อมูลเรื่องประโยชน์และโทษให้ดีเสียก่อน เพื่อป้องกันอันตราย หรือความเสียหายบางอย่างที่อาจเกิดขึ้นกับร่างกายได้ค่ะ <br>
+                    แม้ว่าการนวดไทยนั้นทำให้เราสบายตัว คลายความเมื่อยล้า เลยทำให้เป็นที่นิยมสุด ๆ ผู้คนมากมายแห่เดินเข้าร้านนวดกันว่าเล่น แต่จริง ๆ แล้วรู้กันไหมคะการนวดนั้นใช่ว่าจะมีแต่ข้อดีเสมอไป จริงอยู่ว่าการนวดไทย หรือ การนวดแผนโบราณ นั้นมีข้อดีอยู่มาก แต่ก็ใช่ว่าจะไม่มีข้อเสียเลยค่ะ ดังนั้นก่อนเข้ารับการนวด ผู้นวดจึงควรจะต้องศึกษาข้อมูลเรื่องประโยชน์และโทษให้ดีเสียก่อน เพื่อป้องกันอันตราย หรือความเสียหายบางอย่างที่อาจเกิดขึ้นกับร่างกายได้ค่ะ <br>
 
                   </p>
                 </div>
@@ -145,7 +137,7 @@
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>หากมีแผล ควรงดนวด </h3>
                   <p>
-                  ผู้ที่มีบาดแผล หรือบาดแผลติดเชื้อ การนวดแผนไทยจะทำให้แผลลุกลามและเสี่ยงต่อการติดเชื้อมากขึ้น โดยเฉพาะกับอุปกรณ์ หมอน ผ้าปู ต่าง ๆ ควรจะเลือกเข้ารับการนวดจากร้านที่มีอนามัยที่ดีค่ะ ยิ่งถ้าการนวดต้องมีการใช้น้ำและน้ำมันควรหลีกเลี่ยงจนกว่าแผลจะหาย เพราะอาจเสี่ยงติดเชื้อได้
+                    ผู้ที่มีบาดแผล หรือบาดแผลติดเชื้อ การนวดแผนไทยจะทำให้แผลลุกลามและเสี่ยงต่อการติดเชื้อมากขึ้น โดยเฉพาะกับอุปกรณ์ หมอน ผ้าปู ต่าง ๆ ควรจะเลือกเข้ารับการนวดจากร้านที่มีอนามัยที่ดีค่ะ ยิ่งถ้าการนวดต้องมีการใช้น้ำและน้ำมันควรหลีกเลี่ยงจนกว่าแผลจะหาย เพราะอาจเสี่ยงติดเชื้อได้
                   </p>
                 </div>
               </div>
@@ -209,46 +201,7 @@
       </div>
     </section><!-- End Book A Table Section -->
 
-    <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
 
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Gallery</h2>
-          <p>Some photos from Our massage parlor</p>
-        </div>
-      </div>
-
-      <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-0">
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/gallery-1.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/a.jpg')}}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/gallery-2.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/b.jpg')}}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/gallery-3.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/c.jpg')}}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-
-    </section><!-- End Gallery Section -->
 
     <!-- ======= Chefs Section ======= -->
     <section id="chefs" class="chefs">
@@ -328,7 +281,7 @@
       </div>
 
       <div data-aos="fade-up">
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9213.991142370482!2d100.49934453676704!3d13.838674469267284!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x944b4fd9d843b40c!2z4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14Lie4LiH4Lip4LmM4Liq4Lin4Lix4Liq4LiU4Li04LmM!5e0!3m2!1sth!2sth!4v1630124653489!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>" frameborder="0" allowfullscreen></iframe>
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9213.991142370482!2d100.49934453676704!3d13.838674469267284!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x944b4fd9d843b40c!2z4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14Lie4LiH4Lip4LmM4Liq4Lin4Lix4Liq4LiU4Li04LmM!5e0!3m2!1sth!2sth!4v1630124653489!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></iframe>
       </div>
 
       <div class="container" data-aos="fade-up">

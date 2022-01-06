@@ -25,10 +25,10 @@
                 <div class="form-group">
                     <label for="exampleSelectGender">Cetegory</label>
                     <select class="form-control" id="exampleSelectGender" name="category">
-                    <option selected="selected" value="{{$service->category_id}}">{{$service->category->name}}</option>
-                            @foreach ($categories as $category)
-                            <option value="{{$category->id}}">{{$category->name}}</option>
-                            @endforeach
+                        <option selected="selected" value="{{$service->category_id}}">{{$service->category->name}}</option>
+                        @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
                     </select>
                 </div>
 

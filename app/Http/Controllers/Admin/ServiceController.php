@@ -66,7 +66,7 @@ class ServiceController extends Controller
             $service->category_id = $request->category;
         }
 
-        $service->update();
+        $service->save();
         return redirect()->route('index.admin');
     }
 
