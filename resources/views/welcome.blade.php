@@ -1,5 +1,6 @@
 @include('layouts.head')
 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 <body>
     @include('layouts.header')
 
@@ -185,51 +186,32 @@
                     <p>Book a Table</p>
                 </div>
 
-                <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form"
-                    data-aos="fade-up" data-aos-delay="100">
+                <form action="{{ route('book.create') }}" method="POST" role="form" class="form-group" data-aos-delay="100">
+                    @csrf
                     <div class="row">
                         <div class="col-lg-4 col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                                data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                            <div class="validate"></div>
+                            <input type="text" name="name" class="form-control"  placeholder="Your Name">
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                                data-rule="email" data-msg="Please enter a valid email">
-                            <div class="validate"></div>
+                            <input type="email" class="form-control" name="email"  placeholder="Your Email">
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone"
-                                data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                            <div class="validate"></div>
+                            <input type="text" class="form-control" name="phone"  placeholder="Your Phone">
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3">
-                            <input type="text" name="date" class="form-control" placeholder="Date"
-                                data-rule="minlen:4" data-msg="Please enter at least 4 chars" id="datepicker">
-                            <div class="validate"></div>
+                            <input type="text" name="date" class="form-control" placeholder="Date" id="datepicker">
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3">
-                            <input type="text" class="form-control" name="time"  id="timepicker" placeholder="Time"
-                                data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                            <div class="validate"></div>
+                            <input type="text" class="form-control" name="time" id="timepicker" placeholder="Time">
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3">
-                            <input type="number" class="form-control" name="people" id="people"
-                                placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
-                            <div class="validate"></div>
+                            <input type="text" class="form-control" name="people" placeholder="People">
                         </div>
                     </div>
                     <div class="form-group mt-3">
                         <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
-                        <div class="validate"></div>
                     </div>
-                    <div class="mb-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your booking request was sent. We will call back or send an Email to
-                            confirm your reservation. Thank you!</div>
-                    </div>
-                    <div class="text-center"><button type="submit">Book a Table</button></div>
+                    <div class="text-center"><button type="submit" class="btn btn-primary">Send Booking</button></div>
                 </form>
 
             </div>
@@ -413,28 +395,48 @@
     <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <script>
-      $(function() {
-          $("#datepicker").datepicker({
-              changeMonth: true,
-              changeYear: true
-          });
-      });
-  </script>
+        $(function() {
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+    </script>
 
     {{-- cloes date --}}
     {{-- time --}}
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script>
-      $('#timepicker').timepicker({
-          uiLibrary: 'bootstrap4'
-      });
-  </script>
+        $('#timepicker').timepicker({
+            uiLibrary: 'bootstrap4'
+        });
+    </script>
     {{-- close time --}}
 
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch(type){
+            case 'info':
+            toastr.info(" {{ Session::get('message') }} ");
+            break;
+            case 'success':
+            toastr.success(" {{ Session::get('message') }} ");
+            break;
+            case 'warning':
+            toastr.warning(" {{ Session::get('message') }} ");
+            break;
+            case 'error':
+            toastr.error(" {{ Session::get('message') }} ");
+            break;
+            }
+        @endif
+    </script>
 </body>
 
 </html>

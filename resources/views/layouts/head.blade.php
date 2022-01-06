@@ -40,6 +40,7 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    
 
     <!-- =======================================================
   * Template Name: Restaurantly - v3.3.0

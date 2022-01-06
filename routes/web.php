@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontendController@index');
 
+//Booking
+Route::post('/booking/create','FrontendController@createbooking')->name('book.create');
+
 Auth::routes();
 
 //My Profile
