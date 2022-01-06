@@ -209,7 +209,7 @@
                             <div class="validate"></div>
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3">
-                            <input type="text" class="form-control" name="time" id="time" placeholder="Time"
+                            <input type="text" class="form-control" name="time"  id="timepicker" placeholder="Time"
                                 data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                             <div class="validate"></div>
                         </div>
@@ -422,7 +422,15 @@
   </script>
 
     {{-- cloes date --}}
-    
+    {{-- time --}}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script>
+      $('#timepicker').timepicker({
+          uiLibrary: 'bootstrap4'
+      });
+  </script>
+    {{-- close time --}}
 
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
