@@ -18,10 +18,22 @@ class CategoryController extends Controller
     }
 
     public function insert(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'required|unique:categories|max:255',
+        ],
+        [
+            'name.required' => 'กรุณาป้อนข้อมูลประเภทบริการ',
+            'name.unique' => 'มีชื่อประเภทบริการนี้อยู่ในฐานข้อมูลแล้ว',
+            'name.max' => 'กรอกข้อมูลได้สูงสุด 255 ตัวอักษร'
+        ]);
         $category = new Category();
         $category->name = $request->name;
         $category->save();
-        return redirect()->route('index.category');
+        $notification = array(
+            'message' => 'บันทึกข้อมูลเรียบร้อยแล้ว',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('index.category')->with($notification);
     }
 
     public function edit($id){
@@ -33,14 +45,22 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->name = $request->name;
         $category->update();
-        return redirect()->route('index.category');
+        $notification = array(
+            'message' => 'แก้ไขข้อมูลเรียบร้อยแล้ว',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('index.category')->with($notification);
 
     }
 
     public function delete($id){
         $category = Category::find($id);
         $category->delete();
-        return redirect()->route('index.category');
+        $notification = array(
+            'message' => 'ลบข้อมูลเรียบร้อยแล้ว',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('index.category')->with($notification);
 
     }
 }

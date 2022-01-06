@@ -10,17 +10,29 @@
                 <div class="form-group">
                     <label for="exampleInputName1">Name</label>
                     <input type="text" class="form-control" id="exampleInputName1" name="name" placeholder="Name">
+                        @error('name')
+                        <span class="text-danger">{{$message}}</span>
+                        @enderror
                 </div>
+                
 
                 <div class="form-group">
                     <label for="exampleInputPrice1">Price</label>
                     <input type="text" class="form-control" id="exampleInputPrice1" name="price" placeholder="Price">
+                        @error('price')
+                        <span class="text-danger">{{$message}}</span>
+                        @enderror
                 </div>
+                
 
                 <div class="form-group">
                     <label for="exampleTextarea1">Details</label>
                     <textarea class="form-control" id="exampleTextarea1" name="detail" rows="4"></textarea>
+                        @error('detail')
+                        <span class="text-danger">{{$message}}</span>
+                        @enderror
                 </div>
+                
 
                 <div class="form-group">
                     <label for="exampleSelectGender">Cetegory</label>
@@ -28,7 +40,6 @@
                             @foreach ($categories as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
-
                     </select>
                 </div>
 
@@ -41,13 +52,11 @@
                             <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                         </span>
                     </div>
+                    @error('image')
+                        <span class="text-danger">{{$message}}</span>
+                        @enderror
                 </div>
-
-
-
-
-                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                <button class="btn btn-dark">Cancel</button>
+                <button type="submit" class="btn btn-primary mr-2">บันทึกข้อมูล</button>
             </form>
         </div>
     </div>

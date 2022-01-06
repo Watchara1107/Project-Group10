@@ -53,25 +53,20 @@
 
             <div class="section-title">
               <h2>menu</h2>
-              <p>รอบเวลาในการนวด</p>
+              <p>รายการบริการนวด</p>
             </div>
 
 
             <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
-
+                
               <div class="col-lg-6 menu-item filter-starters">
                 <img src="{{asset('assets/img/menu/b.jpg')}}" class="menu-img" alt="">
                 <div class="menu-content">
                   <a href="#">รอบเช้า</a><span>6.am-12.am</span>
                 </div>
-
               </div>
 
-              <div class="col-lg-6 menu-item filter-specialty">
-                <img src="{{asset('assets/img/menu/c.jpg')}}" class="menu-img" alt="">
-                <div class="menu-content">
-                  <a href="#">รอบบ่าย</a><span>$13.pm-22.pm</span>
-                </div>
+             
 
 
 

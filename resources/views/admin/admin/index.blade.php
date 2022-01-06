@@ -26,7 +26,7 @@
                             <tr>
                                 <td>{{$services->id}}</td>
                                 <td>
-                                    <img src="{{asset('backend/images/'.$services->image)}}" alt="">
+                                    <img class="img-fluid" src="{{asset('backend/images/'.$services->image)}}" width="150px" alt="">
                                 </td>
                                 <td>{{$services->name}}</td>
                                 <td>{{$services->category->name}}</td>

@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{{asset('backend/assets/css/style.css')}}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{asset('backend/assets/images/favicon.png')}}" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 </head>
 
 <body>
@@ -44,11 +45,9 @@
                     <div class="profile-desc">
                         <div class="profile-pic">
                             <div class="count-indicator">
-                                <img class="img-xs rounded-circle " src="{{asset('backend/assets/images/faces/face15.jpg')}}" alt="">
-                                <span class="count bg-success"></span>
                             </div>
                             <div class="profile-name">
-                                <h5 class="mb-0 font-weight-normal">{{Auth()->user()->name}}</h5>
+                                <h5 class="mb-0 font-weight-normal">สวัสดี : คุณ {{Auth()->user()->name}}</h5>
                                 <span></span>
                             </div>
                         </div>
@@ -91,6 +90,9 @@
                         </span>
                         <span class="menu-title">Logout</span>
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
                 <!-- <li class="nav-item menu-items">
                     <a class="nav-link" href="{{route('index.user')}}">
@@ -117,43 +119,11 @@
                     </button>
 
                     <ul class="navbar-nav navbar-nav-right">
-
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
-                                <div class="navbar-profile">
-                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{Auth()->user()->name}}</p>
-                                </div>
+                        <li class="nav-item">
+                            <div class="navbar-profile">
+                                <a href="{{route('home')}}" class="mb-0 d-none d-sm-block navbar-profile-name nav-link">My Profile</a>
+                            </div>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                                <h6 class="p-3 mb-0">Manu</h6>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item" href="{{route('home')}}">
-                                    <div class="preview-thumbnail">
-                                        <div class="preview-icon bg-dark rounded-circle">
-                                            <i class="mdi mdi-account-circle"></i>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item-content">
-                                        <p class="preview-subject mb-1">My Profile</p>
-                                    </div>
-                                </a>
-                                <div class="dropdown-divider"></div>
-
-                                <a class="dropdown-item preview-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    <div class="preview-thumbnail">
-                                        <div class="preview-icon bg-dark rounded-circle">
-                                            <i class="mdi mdi-logout text-danger"></i>
-                                        </div>
-                                    </div>
-                                    <div class="preview-item-content">
-                                        <p class="preview-subject mb-1">Log out</p>
-                                    </div>
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
                         </li>
                     </ul>
                     <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
@@ -172,8 +142,8 @@
                     <!-- partial:partials/_footer.html -->
                     <footer class="footer">
                         <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2019 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
-                            <span class="text-muted float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+                            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021 Information Technology.<a href="https://pongsawadi.ac.th" target="_blank">Pongsawadi Technological College.</a></span>
+                            <span class="text-muted float-none float-sm-right d-block mt-1 mt-sm-0 text-center"></span>
                         </div>
                     </footer>
                     <!-- partial -->
@@ -215,6 +185,27 @@
         <script src="{{asset('backend/assets/js/typeahead.js')}}"></script>
         <script src="{{asset('backend/assets/js/select2.js')}}"></script>
         <!-- End custom js for this page -->
-</body>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+<script>
+ @if(Session::has('message'))
+ var type = "{{ Session::get('alert-type','info') }}"
+ switch(type){
+    case 'info':
+    toastr.info(" {{ Session::get('message') }} ");
+    break;
+    case 'success':
+    toastr.success(" {{ Session::get('message') }} ");
+    break;
+    case 'warning':
+    toastr.warning(" {{ Session::get('message') }} ");
+    break;
+    case 'error':
+    toastr.error(" {{ Session::get('message') }} ");
+    break; 
+ }
+ @endif 
+</script> 
+
+</body>
 </html>

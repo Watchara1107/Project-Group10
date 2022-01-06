@@ -12,12 +12,31 @@ use File;
 
 class ServiceController extends Controller
 {
-    public function index(){
-        return view('admin.service.index')->with('categories',Category::all());
+    public function index()
+    {
+        return view('admin.service.index')->with('categories', Category::all());
     }
 
-    public function create(Request $request){
-
+    public function create(Request $request)
+    {
+        $validatedData = $request->validate(
+            [
+                'name' => 'required|max:255',
+                'price' => 'required|max:255',
+                'detail' => 'required',
+                'image' => 'mimes:jpeg,jpg,png,gif|file|max:12040',
+            ],
+            [
+                'name.required' => 'กรุณาป้อนข้อมูลชื่อบริการ',
+                'name.max' => 'กรอกข้อมูลได้สูงสุด 255 ตัวอักษร',
+                'price.required' => 'กรุณาป้อนข้อมูลราคา',
+                'price.max' => 'กรอกข้อมูลได้สูงสุด 255 ตัวอักษร',
+                'detail.required' => 'กรุณาป้อนข้อมูลรายละเอียดการบริการ',
+                'image.mimes' => 'กรุณาอัพโหลดภาพนามสกุล jpeg,jpg,png,gif เท่านั้น',
+                'image.file' => 'อัพโหลดได้เฉพาะไฟล์ภาพ',
+                'image.max' => 'อัพโหลดขนาดไม่เกิน 10MB',
+            ]
+        );
         $service = new Service();
         $service->name = $request->name;
         $service->detail = $request->detail;
@@ -34,16 +53,22 @@ class ServiceController extends Controller
         }
 
         $service->save();
-        return redirect()->route('index.admin');
+        $notification = array(
+            'message' => 'บันทึกข้อมูลเรียบร้อยแล้ว',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('index.admin')->with($notification);
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $service = Service::find($id);
-        return view('admin.service.edit',compact('service'))
-        ->with('categories',Category::all());
+        return view('admin.service.edit', compact('service'))
+            ->with('categories', Category::all());
     }
 
-    public function update(Request $request,$id){
+    public function update(Request $request, $id)
+    {
 
         if ($request->hasFile('image')) {
             $service = Service::find($id);
@@ -67,15 +92,24 @@ class ServiceController extends Controller
         }
 
         $service->save();
-        return redirect()->route('index.admin');
+        $notification = array(
+            'message' => 'แก้ไขข้อมูลเรียบร้อยแล้ว',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('index.admin')->with($notification);
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $delete = Service::find($id);
         if ($delete->image != 'NOPIC.jpg') {
-            File::delete(public_path().'/backend/images/'.$delete->image);
+            File::delete(public_path() . '/backend/images/' . $delete->image);
         }
         $delete->delete();
-        return redirect()->route('index.admin');
+        $notification = array(
+            'message' => 'ลบข้อมูลเรียบร้อยแล้ว',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('index.admin')->with($notification);
     }
 }
