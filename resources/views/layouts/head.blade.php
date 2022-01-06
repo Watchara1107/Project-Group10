@@ -23,6 +23,13 @@
   <link href="{{asset('assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
   <link href="{{asset('assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
   <link href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  {{-- date --}}
+  <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="jqueryui/style.css">
+  {{-- cloes date --}}
+
+  
   
 
   <!-- Template Main CSS File -->
