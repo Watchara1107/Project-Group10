@@ -1,6 +1,7 @@
 @include('layouts.head')
 
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
 <body>
     @include('layouts.header')
 
@@ -8,9 +9,9 @@
     <section id="hero" class="d-flex align-items-center">
         <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-9">
                     <h1>Welcome to <span>Thai Massage Shop</span></h1>
-                    <h2>ยินดีต้อนรับเข้าสู่เว็บไซต์ร้านนวดเเผนไทย</h2>
+                    <h2 class="mt-4">ยินดีต้อนรับเข้าสู่เว็บไซต์ร้านนวดเเผนไทย</h2>
                 </div>
                 <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative"
                     data-aos="zoom-in" data-aos-delay="200">
@@ -186,23 +187,39 @@
                     <p>Book a Table</p>
                 </div>
 
-                <form action="{{ route('book.create') }}" method="POST" role="form" class="form-group" data-aos-delay="100">
+                <form action="{{ route('book.create') }}" method="POST" role="form" class="form-group"
+                    data-aos-delay="100">
                     @csrf
                     <div class="row">
                         <div class="col-lg-4 col-md-6 form-group">
-                            <input type="text" name="name" class="form-control"  placeholder="Your Name">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name">
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email"  placeholder="Your Email">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email">
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                            <input type="text" class="form-control" name="phone"  placeholder="Your Phone">
+                            <input type="text" class="form-control" name="phone" placeholder="Your Phone">
+                            @error('phone')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3">
                             <input type="text" name="date" class="form-control" placeholder="Date" id="datepicker">
+                            @error('date')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3">
                             <input type="text" class="form-control" name="time" id="timepicker" placeholder="Time">
+                            @error('time')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="col-lg-4 col-md-6 form-group mt-3">
                             <input type="text" class="form-control" name="people" placeholder="People">
@@ -211,7 +228,8 @@
                     <div class="form-group mt-3">
                         <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
                     </div>
-                    <div class="text-center"><button type="submit" class="btn btn-primary">Send Booking</button></div>
+                    <div class="text-center"><button type="submit" class="btn btn-primary">Send Booking</button>
+                    </div>
                 </form>
 
             </div>
@@ -306,15 +324,17 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="row mt-5">
-
-                    <div class="col-lg-4">
+                    {{-- <div class="col-md-3">
                         <div class="info">
                             <div class="address">
                                 <i class="bi bi-geo-alt"></i>
                                 <h4>Location:</h4>
                                 <p>14, ถนน พิบูลสงคราม ตำบลสวนใหญ่ อำเภอเมืองนนทบุรี นนทบุรี 11000</p>
                             </div>
-
+                        </div>
+                    </div> --}}
+                    <div class="col-md-3">
+                        <div class="info">
                             <div class="open-hours">
                                 <i class="bi bi-clock"></i>
                                 <h4>Open Hours:</h4>
@@ -323,56 +343,27 @@
                                     6:00 AM - 23:00 PM
                                 </p>
                             </div>
-
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="info">
                             <div class="email">
                                 <i class="bi bi-envelope"></i>
                                 <h4>Email:</h4>
                                 <p>Kunlabut.2547@gmail.com</p>
                             </div>
-
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="info">
                             <div class="phone">
                                 <i class="bi bi-phone"></i>
                                 <h4>Call:</h4>
                                 <p>+1 5589 55488 55s</p>
                             </div>
-
                         </div>
-
                     </div>
-
-                    <div class="col-lg-8 mt-5 mt-lg-0">
-
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" required>
-                                </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject"
-                                    placeholder="Subject" required>
-                            </div>
-                            <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="8" placeholder="Message"
-                                    required></textarea>
-                            </div>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
-                        </form>
-
-                    </div>
-
-                </div>
-
+            </div>
             </div>
         </section><!-- End Contact Section -->
 

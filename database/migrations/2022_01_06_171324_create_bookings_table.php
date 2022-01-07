@@ -20,8 +20,9 @@ class CreateBookingsTable extends Migration
             $table->string('phone');
             $table->string('date');
             $table->string('time');
-            $table->string('people')->nullable();
-            $table->text('massage')->nullable();
+            $table->string('status')->nullable()->default('ข้อความใหม่');
+            $table->string('people')->nullable()->default('No Data');
+            $table->text('massage')->nullable()->default('No Data');
             $table->timestamps();
         });
     }

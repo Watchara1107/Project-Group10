@@ -81,6 +81,14 @@
                         <span class="menu-title">Category</span>
                     </a>
                 </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="{{ route('booking.index') }}">
+                        <span class="menu-icon">
+                            <span class="mdi mdi-book-open-page-variant"></span>
+                        </span>
+                        <span class="menu-title">Booking</span>
+                    </a>
+                </li>
 
                 <li class="nav-item menu-items">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();

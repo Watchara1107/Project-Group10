@@ -17,6 +17,12 @@ Route::get('/', 'FrontendController@index');
 
 //Booking
 Route::post('/booking/create','FrontendController@createbooking')->name('book.create');
+Route::get('/booking/index','FrontendController@indexbooking')->name('booking.index');
+Route::post('/booking/success/{id}','FrontendController@status');
+Route::post('/booking/successfullry/{id}','FrontendController@status1');
+Route::get('/booking/edit/{id}','FrontendController@edit');
+Route::post('/booking/update/{id}','FrontendController@update');
+Route::get('/booking/delete/{id}','FrontendController@delete');
 
 Auth::routes();
 
