@@ -23,7 +23,7 @@
                     </p>
                     <p>
                         <a href="{{route('index.admin')}}" class="btn btn-primary">Servic Management</a>
-                        <a href="" class="btn btn-success">Home</a>
+                        <a href="{{ url('/') }}" class="btn btn-success">Home</a>
                     </p>
 
 
