@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2022 at 10:53 AM
+-- Generation Time: Jan 08, 2022 at 11:05 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -35,11 +35,18 @@ CREATE TABLE `bookings` (
   `date` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'ข้อความใหม่',
-  `people` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'No Data',
-  `massage` text COLLATE utf8mb4_unicode_ci DEFAULT 'No Data',
+  `people` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `massage` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`id`, `name`, `email`, `phone`, `date`, `time`, `status`, `people`, `massage`, `created_at`, `updated_at`) VALUES
+(1, 'ทดสอบระบบ', 'Test@gmail.com', '082-558-8889', '02/24/2022', '17:00', 'ข้อความใหม่', NULL, NULL, '2022-01-08 03:03:09', '2022-01-08 03:03:09');
 
 -- --------------------------------------------------------
 
@@ -228,7 +235,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `categories`
