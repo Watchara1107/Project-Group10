@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2022 at 05:27 PM
+-- Generation Time: Jan 08, 2022 at 10:53 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -18,8 +18,28 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `35_group_10`
+-- Database: `u6228496`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bookings`
+--
+
+CREATE TABLE `bookings` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'ข้อความใหม่',
+  `people` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'No Data',
+  `massage` text COLLATE utf8mb4_unicode_ci DEFAULT 'No Data',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -39,14 +59,14 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'การนวดน้ำมันธรรมชาติ', '2022-01-06 09:14:00', '2022-01-06 09:14:00'),
-(2, 'การนวดแบบผ่อนคลาย', '2022-01-06 09:14:07', '2022-01-06 09:14:07'),
-(3, 'การนวดฝ่าเท้า', '2022-01-06 09:14:16', '2022-01-06 09:14:16'),
-(4, 'การนวดสำหรับนักกีฬา หรือการนวดสปอร์ต', '2022-01-06 09:14:22', '2022-01-06 09:14:22'),
-(5, 'การนวดแบบจับเส้น', '2022-01-06 09:14:28', '2022-01-06 09:14:28'),
-(6, 'การนวดสลายไขมัน', '2022-01-06 09:14:35', '2022-01-06 09:14:35'),
-(7, 'การนวดโดยใช้ลูกประคบ', '2022-01-06 09:14:42', '2022-01-06 09:14:42'),
-(8, 'การนวดสำหรับโรคเครียด ไมเกรน', '2022-01-06 09:14:49', '2022-01-06 09:14:49');
+(1, 'การนวดน้ำมันธรรมชาติ', '2022-01-08 02:43:56', '2022-01-08 02:43:56'),
+(2, 'การนวดแบบผ่อนคลาย', '2022-01-08 02:44:04', '2022-01-08 02:44:04'),
+(3, 'การนวดฝ่าเท้า', '2022-01-08 02:44:11', '2022-01-08 02:44:11'),
+(4, 'การนวดสำหรับนักกีฬา หรือการนวดสปอร์ต', '2022-01-08 02:44:18', '2022-01-08 02:44:18'),
+(5, 'การนวดแบบจับเส้น', '2022-01-08 02:44:24', '2022-01-08 02:44:24'),
+(6, 'การนวดสลายไขมัน', '2022-01-08 02:44:30', '2022-01-08 02:44:30'),
+(7, 'การนวดโดยใช้ลูกประคบ', '2022-01-08 02:44:37', '2022-01-08 02:44:37'),
+(8, 'การนวดสำหรับโรคเครียด ไมเกรน', '2022-01-08 02:44:43', '2022-01-08 02:44:43');
 
 -- --------------------------------------------------------
 
@@ -83,8 +103,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2021_12_22_064938_create_categories_table', 2),
-(5, '2021_12_22_065000_create_services_table', 2);
+(4, '2021_12_22_064938_create_categories_table', 1),
+(5, '2021_12_22_065000_create_services_table', 1),
+(6, '2022_01_06_171324_create_bookings_table', 1);
 
 -- --------------------------------------------------------
 
@@ -120,12 +141,12 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `name`, `price`, `detail`, `image`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 'นวดแผนไทย', '200  THB', 'Thai Massage 60 min', 'PVEv5eSjuE.jpg', 5, '2022-01-06 09:17:26', '2022-01-06 09:17:26'),
-(2, 'นวดฝ่าเท้า', '200  THB', 'Foot Massage 60 min', 'RUzve0YEdJ.jpg', 3, '2022-01-06 09:18:23', '2022-01-06 09:18:23'),
-(3, 'นวดน้ำมัน', '300  THB', 'Oil Massage   60 min', 'uc8SjHTydI.jpg', 1, '2022-01-06 09:19:23', '2022-01-06 09:19:23'),
-(4, 'นวดไทยน้ำมัน', '300  THB', 'Thai Massage with oil', 'gVjcGLJ7Vo.jpg', 1, '2022-01-06 09:20:17', '2022-01-06 09:20:17'),
-(5, 'นวดแก้อาการ', '300  THB', 'Massage Treatment 60', 'mF673Oe5aK.jpg', 8, '2022-01-06 09:22:16', '2022-01-06 09:22:16'),
-(6, 'นวดอโรม่า', '500  THB', 'Aroma Massage 60 min', 'a4i16BgbT3.jpg', 2, '2022-01-06 09:23:36', '2022-01-06 09:23:36');
+(1, 'นวดแผนไทย', '200  THB', 'Thai Massage 60 min', 'KsocpuljoS.jpg', 5, '2022-01-08 02:49:01', '2022-01-08 02:49:01'),
+(2, 'นวดฝ่าเท้า', '200  THB', 'Foot Massage 60 min', 'RVxBdfH7DN.jpg', 3, '2022-01-08 02:49:39', '2022-01-08 02:49:39'),
+(3, 'นวดน้ำมัน', '300  THB', 'Oil Massage   60 min', '3gSmZZGijl.jpg', 1, '2022-01-08 02:50:10', '2022-01-08 02:50:10'),
+(4, 'นวดไทยน้ำมัน', '300  THB', 'Thai Massage with oil', 'G2HaGLjBiz.jpg', 1, '2022-01-08 02:50:48', '2022-01-08 02:50:48'),
+(5, 'นวดแก้อาการ', '300  THB', 'Massage Treatment 60', 'WdcoDB5MrY.jpg', 4, '2022-01-08 02:51:51', '2022-01-08 02:51:51'),
+(6, 'นวดอโรม่า', '500  THB', 'Aroma Massage 60 min', 'MV1w9ci2oI.jpg', 2, '2022-01-08 02:52:43', '2022-01-08 02:52:43');
 
 -- --------------------------------------------------------
 
@@ -150,13 +171,17 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin', 'admin@gmail.com', NULL, '$2y$10$w6wm5M8b9r.SO7QMdNIJ9.18JXJw4cMux1S2a4iXKpFeQtQXinHpK', NULL, '2021-12-21 19:43:09', '2021-12-21 19:43:09'),
-(2, 'user', 'User', 'user@gmail.com', NULL, '$2y$10$EbbD6h.8KbqjY0QpNP7DteGw68jbjectQaAaEID5JFzJ6wPUtdVOu', NULL, '2021-12-21 19:47:51', '2021-12-21 19:47:51'),
-(3, 'user1', 'user1', 'user1@gmail.com', NULL, '$2y$10$jbaGnLh9Y1jf.xHZr0FXOuYHNOd59di5eKZCuNrKJ4AGZ.zQg4F1W', NULL, '2022-01-06 06:32:47', '2022-01-06 06:32:47');
+(1, 'admin', 'admin', 'admin@gmail.com', NULL, '$2y$10$3VBpKWh/BX6LbivXzYVGCe3txbyjdrTUtyl1lbL5EpabcXOhu/Gmy', NULL, '2022-01-08 02:24:37', '2022-01-08 02:24:37');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bookings`
+--
+ALTER TABLE `bookings`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `categories`
@@ -200,6 +225,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -215,7 +246,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -227,7 +258,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -12,6 +12,10 @@ use File;
 
 class ServiceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware("VerifyIsCategory")->only(['index','create']);
+    }
     public function index()
     {
         return view('admin.service.index')->with('categories', Category::all());

@@ -48,9 +48,9 @@
                         <div class="form-group mt-4">
                         <a href="{{url('/')}}"><button type="submit" class="form-control btn btn-primary submit px-3">กลับหน้า Home</button></a>
                             </div>
-                        <!-- <div class="form-group mt-4">
+                        {{-- <div class="form-group mt-4">
                             <a href="{{route('register')}}" class="form-control btn btn-primary submit px-3"> ไปหน้า Register </a>                        
-                        </div> -->
+                        </div>  --}}
                     </div>
                 </div>
             </div>
